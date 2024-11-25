@@ -77,15 +77,15 @@
 	<title>
 		<band height="79" splitType="Stretch">
 			<image>
-				<reportElement x="13" y="14" width="169" height="42" uuid="13d3bc7e-0d2a-4d18-9466-1dd3c5923586"/>
+				<reportElement x="50" y="0" width="169" height="70" uuid="13d3bc7e-0d2a-4d18-9466-1dd3c5923586"/>
 				<imageExpression><![CDATA[$P{imagenurl}]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement x="210" y="25" width="191" height="20" uuid="0643943b-ba16-4427-b7f1-e1fa939825a6"/>
-				<textElement>
-					<font fontName="Arial Black" size="14" isBold="true"/>
+				<reportElement x="170" y="10" width="220" height="50" uuid="0643943b-ba16-4427-b7f1-e1fa939825a6"/>
+				<textElement textAlignment="Center">
+					<font fontName="Algerian" size="16" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Comprobante de Venta]]></text>
+				<text><![CDATA[BOTICA AMANECER COMPROBANTE DE VENTA]]></text>
 			</staticText>
 		</band>
 	</title>

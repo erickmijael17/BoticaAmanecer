@@ -59,17 +59,17 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch">
+		<band height="86" splitType="Stretch">
 			<image>
-				<reportElement x="12" y="11" width="177" height="50" uuid="e7789d79-f539-4bfc-9a3a-e9f01c4df7c1"/>
+				<reportElement x="70" y="10" width="217" height="75" uuid="e7789d79-f539-4bfc-9a3a-e9f01c4df7c1"/>
 				<imageExpression><![CDATA[$P{imagenurl}]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement x="266" y="28" width="100" height="20" uuid="db7094c9-49ae-421f-bf3b-40ea9f42fea9"/>
-				<textElement>
-					<font isBold="true" isItalic="false"/>
+				<reportElement x="200" y="20" width="183" height="40" uuid="db7094c9-49ae-421f-bf3b-40ea9f42fea9"/>
+				<textElement textAlignment="Center">
+					<font fontName="Algerian" size="12" isBold="true" isItalic="false"/>
 				</textElement>
-				<text><![CDATA[Reporte de Ventas]]></text>
+				<text><![CDATA[BOTICA AMANECER COMPROBANTE DE VENTA]]></text>
 			</staticText>
 		</band>
 	</title>

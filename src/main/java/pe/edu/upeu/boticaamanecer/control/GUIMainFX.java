@@ -2,10 +2,12 @@ package pe.edu.upeu.boticaamanecer.control;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -151,24 +153,29 @@ public class GUIMainFX {
             }
 
             if (((MenuItem) e.getSource()).getId().equals("mimisalir")) {
-
                 tabPaneFx.getTabs().clear();
-
                 try {
                     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/login.fxml"));
-                    fxmlLoader.setControllerFactory(context::getBean); // Configuración de Spring
+                    fxmlLoader.setControllerFactory(context::getBean);
                     Parent parent = fxmlLoader.load();
-
                     Scene scene = new Scene(parent);
-                    stage.setScene(scene);
-                    stage.sizeToScene();
-                    stage.centerOnScreen();
-                    stage.setTitle("SysAlmacen Spring Java-FX");
-                    stage.setResizable(false);
-                    stage.show();
 
+                    Stage loginStage = new Stage();
+                    loginStage.setScene(scene);
+                    loginStage.setTitle("SysAlmacen Spring Java-FX");
+                    loginStage.setResizable(false);
+
+                    Screen screen = Screen.getPrimary();
+                    Rectangle2D bounds = screen.getVisualBounds();
+                    loginStage.setX(bounds.getMinX() + (bounds.getWidth() - loginStage.getWidth()) / 2); // Centrar horizontalmente
+                    loginStage.setY(bounds.getMinY() + (bounds.getHeight() - loginStage.getHeight()) / 2); // Centrar verticalmente
+
+                    loginStage.show();
+
+                    Stage currentStage = (Stage) tabPaneFx.getScene().getWindow();
+                    currentStage.close();
                 } catch (Exception ex) {
-                    ex.printStackTrace(); // Diagnosticar problemas
+                    throw new RuntimeException(ex);
                 }
             }
 

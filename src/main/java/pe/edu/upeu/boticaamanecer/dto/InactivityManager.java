@@ -5,7 +5,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class InactivityManager {
-    private static final long INACTIVITY_LIMIT = 30 * 1000; // 30 segundos
+    private static final long INACTIVITY_LIMIT = 5 * 60 * 1000; // 5 minutos
     private Timer inactivityTimer;
     private Runnable onInactivity;
 

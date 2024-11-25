@@ -18,7 +18,7 @@ import javafx.geometry.Rectangle2D;
 
 public class InactivityTimer {
 
-    private static final long INACTIVITY_LIMIT = 30 * 1000; // 30 segundos
+    private static final long INACTIVITY_LIMIT = 5 * 30 * 1000; // 5 minutos
     private Timer inactivityTimer;
     private TabPane tabPaneFx;
     private Preferences userPrefs;

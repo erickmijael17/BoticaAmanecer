@@ -12,6 +12,8 @@ import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
+import pe.edu.upeu.boticaamanecer.dto.InactivityManager;
+import pe.edu.upeu.boticaamanecer.dto.InactivityTimer;
 import pe.edu.upeu.boticaamanecer.dto.MenuMenuItenTO;
 import pe.edu.upeu.boticaamanecer.dto.SessionManager;
 import pe.edu.upeu.boticaamanecer.servicio.MenuMenuItemDao;
@@ -43,12 +45,39 @@ public class GUIMainFX {
     private Parent parent;
     Stage stage;
 
+    private InactivityTimer inactivityTimer;
+    private InactivityManager inactivityManager;
+
+    private void handleInactivityLogout() {
+        tabPaneFx.getTabs().clear();
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/login.fxml"));
+            fxmlLoader.setControllerFactory(context::getBean);
+            Parent parent = fxmlLoader.load();
+            Scene scene = new Scene(parent);
+
+            Stage loginStage = new Stage();
+            loginStage.setScene(scene);
+            loginStage.setTitle("Cierre por Inactividad");
+            loginStage.setResizable(false);
+            loginStage.show();
+
+            Stage currentStage = (Stage) tabPaneFx.getScene().getWindow();
+            currentStage.close();
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+
     @FXML
     public void initialize() {
+        inactivityManager = new InactivityManager(this::handleInactivityLogout);
+        inactivityManager.start(); // Inicia el temporizador
         tabPaneFx.sceneProperty().addListener((obs, oldScene, newScene) -> {
             if (newScene != null) {
                 Stage stage = (Stage) newScene.getWindow();
                 System.out.println("El título del stage es: " + stage.getTitle());
+                inactivityTimer.startInactivityTimer(); // Iniciar el temporizador cuando se abre la escena
             }
         });
 
@@ -118,6 +147,7 @@ public class GUIMainFX {
 
     class MenuItemListener {
         public void handle(javafx.event.ActionEvent e) {
+            inactivityManager.reset(); // Reinicia el temporizador
 
             if (((MenuItem) e.getSource()).getId().equals("mimiregproduct")) {
                 tabPaneFx.getTabs().clear();

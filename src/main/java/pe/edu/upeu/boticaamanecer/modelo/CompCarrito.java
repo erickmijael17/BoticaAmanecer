@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Entity
-@Table(name = "comp_carrito")
+@Table(name = "upeu_comp_carrito")
 public class CompCarrito {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

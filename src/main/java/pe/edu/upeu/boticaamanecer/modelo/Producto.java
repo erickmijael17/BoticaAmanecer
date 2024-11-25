@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Entity
-@Table(name = "producto")  //Bonnier (1p)
+@Table(name = "upeu_producto")  //Bonnier (1p)
 public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

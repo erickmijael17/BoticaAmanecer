@@ -2,15 +2,15 @@
 <!-- Created with Jaspersoft Studio version 6.21.3.final using JasperReports Library version 6.21.3-4a3078d20785ebe464f18037d738d12fc98c13cf  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="detallev" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1385f0ac-6505-4e9b-822d-7f4e9ff36d0e">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="base de datos botica"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="524"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="462"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="base de datos botica"/>
 	<parameter name="idventa" class="java.lang.Long"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT vd.*,
 	up.nombre
-FROM producto up,
-	venta_detalle vd
+FROM upeu_producto up,
+	upeu_venta_detalle vd
 WHERE 
 	 up.id_producto = vd.id_producto 
 	 AND vd.id_venta = $P{idventa}]]>
@@ -18,42 +18,42 @@ WHERE
 	<field name="id_venta_detalle" class="java.lang.Object">
 		<property name="com.jaspersoft.studio.field.name" value="id_venta_detalle"/>
 		<property name="com.jaspersoft.studio.field.label" value="id_venta_detalle"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="venta_detalle"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="upeu_venta_detalle"/>
 	</field>
 	<field name="cantidad" class="java.lang.Object">
 		<property name="com.jaspersoft.studio.field.name" value="cantidad"/>
 		<property name="com.jaspersoft.studio.field.label" value="cantidad"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="venta_detalle"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="upeu_venta_detalle"/>
 	</field>
 	<field name="descuento" class="java.lang.Object">
 		<property name="com.jaspersoft.studio.field.name" value="descuento"/>
 		<property name="com.jaspersoft.studio.field.label" value="descuento"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="venta_detalle"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="upeu_venta_detalle"/>
 	</field>
 	<field name="pu" class="java.lang.Object">
 		<property name="com.jaspersoft.studio.field.name" value="pu"/>
 		<property name="com.jaspersoft.studio.field.label" value="pu"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="venta_detalle"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="upeu_venta_detalle"/>
 	</field>
 	<field name="subtotal" class="java.lang.Object">
 		<property name="com.jaspersoft.studio.field.name" value="subtotal"/>
 		<property name="com.jaspersoft.studio.field.label" value="subtotal"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="venta_detalle"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="upeu_venta_detalle"/>
 	</field>
 	<field name="id_producto" class="java.lang.Object">
 		<property name="com.jaspersoft.studio.field.name" value="id_producto"/>
 		<property name="com.jaspersoft.studio.field.label" value="id_producto"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="venta_detalle"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="upeu_venta_detalle"/>
 	</field>
 	<field name="id_venta" class="java.lang.Object">
 		<property name="com.jaspersoft.studio.field.name" value="id_venta"/>
 		<property name="com.jaspersoft.studio.field.label" value="id_venta"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="venta_detalle"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="upeu_venta_detalle"/>
 	</field>
 	<field name="nombre" class="java.lang.Object">
 		<property name="com.jaspersoft.studio.field.name" value="nombre"/>
 		<property name="com.jaspersoft.studio.field.label" value="nombre"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="producto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="upeu_producto"/>
 	</field>
 	<variable name="subtotal1" class="java.lang.Integer" resetType="Column" calculation="Count">
 		<variableExpression><![CDATA[$F{subtotal}]]></variableExpression>

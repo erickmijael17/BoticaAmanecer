@@ -41,22 +41,31 @@
                      <GridPane.margin>
                         <Insets left="5.0" />
                      </GridPane.margin></Label>
-                  <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Nombre/Razon social" GridPane.rowIndex="1" />
-                  <Label fx:id="mesage" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="18.0" prefWidth="208.0" text="Label" GridPane.columnSpan="2" GridPane.rowIndex="4" />
-                  <Button fx:id="btnADD" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="26.0" prefWidth="169.0" text="ADD" GridPane.columnSpan="2" GridPane.rowIndex="3">
+                  <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Nombre/Razon social" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin></Label>
+                  <Label fx:id="mesage" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Label" GridPane.columnSpan="2" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin></Label>
+                  <Button fx:id="btnADD" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="26.0" prefWidth="169.0" style="-fx-background-color: green;" text="ADD" GridPane.columnSpan="2" GridPane.rowIndex="3">
                      <GridPane.margin>
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                      </GridPane.margin></Button>
                   <TextField fx:id="txtDNI" GridPane.columnIndex="1" />
                   <TextField fx:id="txtNombre" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Tipo de Documento" GridPane.rowIndex="2" />
+                  <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Tipo de Documento" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin></Label>
                   <ComboBox fx:id="Combobox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                </children>
             </GridPane>
          </children></AnchorPane>
       <AnchorPane layoutX="226.0" layoutY="126.0">
          <children>
-            <TableView fx:id="tableview" prefHeight="260.0" prefWidth="368.0" />
+            <TableView fx:id="tableview" />
          </children></AnchorPane>
    </children>
 </AnchorPane>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.upeu.boticaamanecer.control.AgregarNuevoCliente">
+   <children>
+      <AnchorPane prefHeight="119.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/logo%20botica.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="200.0" layoutY="36.0" prefHeight="38.0" prefWidth="249.0" text="AGREGAR CLIENTES">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="126.0">
+         <children>
+            <GridPane prefHeight="260.0" prefWidth="226.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="DNI/RUC de cliente">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin></Label>
+                  <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Nombre/Razon social" GridPane.rowIndex="1" />
+                  <Label fx:id="mesage" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="18.0" prefWidth="208.0" text="Label" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+                  <Button fx:id="btnADD" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="26.0" prefWidth="169.0" text="ADD" GridPane.columnSpan="2" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </GridPane.margin></Button>
+                  <TextField fx:id="txtDNI" GridPane.columnIndex="1" />
+                  <TextField fx:id="txtNombre" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Tipo de Documento" GridPane.rowIndex="2" />
+                  <ComboBox fx:id="Combobox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+         </children></AnchorPane>
+      <AnchorPane layoutX="226.0" layoutY="126.0">
+         <children>
+            <TableView fx:id="tableview" prefHeight="260.0" prefWidth="368.0" />
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

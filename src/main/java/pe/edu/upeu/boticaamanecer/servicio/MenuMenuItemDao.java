@@ -22,6 +22,7 @@ public class MenuMenuItemDao implements MenuMenuItenDaoI{
         lista.add(new MenuMenuItenTO("Edit", idioma.getProperty("menuitem.nombre.postulante"), "miselectall"));
         lista.add(new MenuMenuItenTO("Producto", "Reg. Producto", "miregproduct"));
         lista.add(new MenuMenuItenTO("Venta", "Reg. Venta", "miventa"));
+        lista.add(new MenuMenuItenTO("Cliente", "Reg. Cliente", "micliente"));
         List<MenuMenuItenTO> accesoReal = new ArrayList<>();
         switch (perfil) {
             case "Administrador":

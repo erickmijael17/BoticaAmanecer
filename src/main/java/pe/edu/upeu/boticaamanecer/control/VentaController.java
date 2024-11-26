@@ -80,6 +80,7 @@ public class VentaController {
                 dniRuc.setText(lastCliente.getIdx());
                 listar();
             }
+
         });
 
         listarProducto();

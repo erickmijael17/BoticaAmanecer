@@ -182,6 +182,23 @@ public class GUIMainFX {
                 }
             }
 
+            if (((MenuItem) e.getSource()).getId().equals("mimicliente")) {
+                tabPaneFx.getTabs().clear();
+                FXMLLoader loader = new
+                        FXMLLoader(getClass().getResource("/view/addnew_cliente.fxml"));
+                loader.setControllerFactory(context::getBean);
+                Parent paneFromFXML;
+                try {
+                    paneFromFXML = loader.load(); // Cargar el contenido FXML
+                    ScrollPane dd= new ScrollPane(paneFromFXML);
+                    //mc.setContexto(ctx);
+                    Tab clienteTab = new Tab("Reg. Cliente",dd );
+                    tabPaneFx.getTabs().add(clienteTab);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+
             if (((MenuItem) e.getSource()).getId().equals("mimisalir")) {
                 tabPaneFx.getTabs().clear();
                 try {
